@@ -1,17 +1,18 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 
 
 def index(request):
     data = {
-        'title': 'Home',
-        'content': 'Main page store',
-        'list': ['first', 'second'],
-        'dict': {'first': 1},
-        'is_authenticated': False
+        "title": "UMHome - Главная",
+        "content": "Магазин мебели"
     }
-    return render(request, 'main/index.html', data)
+    return render(request, "main/index.html", data)
 
 
 def about(request):
-    return HttpResponse("About page")
+    data = {
+        "title": "UMHome - О нас",
+        "content": "О нас",
+        "text_on_page": "Текст о том, какой у нас классный магазин",
+    }
+    return render(request, "main/about.html", data)
