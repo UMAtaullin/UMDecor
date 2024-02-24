@@ -9,6 +9,7 @@ __pycache__/
 # django stuff
 db.sqlite3
 media/
+static/
 
 # personal stuff
 .build/
