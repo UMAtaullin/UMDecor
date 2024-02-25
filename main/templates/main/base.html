@@ -31,30 +31,28 @@
       <div class="row mt-1 position-fixed z-3">
         <!-- Каталог -->
         <div class="dropdown mb-2">
-            <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Каталог
-                <img class="mx-1" src="{% static "deps/icons/grid-fill.svg" %}" alt="Catalog Icon" width="16"
-                    height="16">
-            </button>
-            <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
-                <li><a class="dropdown-item text-white" href="{% url "catalog:index" %}">Все товары</a></li>
-                <li><a class="dropdown-item text-white" href="{% url "catalog:index" %}">Кухня</a></li>
-                <li><a class="dropdown-item text-white" href="{% url "catalog:index" %}">Спальня</a></li>
-                <li><a class="dropdown-item text-white" href="{% url "catalog:index" %}">Гостинная</a></li>
-                <li><a class="dropdown-item text-white" href="{% url "catalog:index" %}">Офис</a></li>
-                <li><a class="dropdown-item text-white" href="{% url "catalog:index" %}">Фурнитура</a></li>
-                <li><a class="dropdown-item text-white" href="{% url "catalog:index" %}">Декор</a></li>
+          <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Каталог
+            <img class="mx-1" src="{% static "deps/icons/grid-fill.svg" %}" alt="Catalog Icon" width="16"
+                height="16">
+          </button>
+          <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
+
+              {% for category in categories %}
+              <li><a class="dropdown-item text-white" href="{% url "catalog:index" %}">{{ category.name }}</a></li>
+              {% endfor %}
+              
             </ul>
           </div>
           <!-- Значек корзины, вызывает модальное окно -->
           <div>
-              <button type="button" class="btn btn-dark btn-secondary d-flex" id="modalButton"
-                  aria-expanded="false">
-                  <img class="mx-1" src="{% static "deps/icons/basket2-fill.svg" %}" alt="Catalog Icon" width="24"
-                      height="24">
-                  <span id="goods-in-cart-count">0</span>
-              </button>
+            <button type="button" class="btn btn-dark btn-secondary d-flex" id="modalButton"
+              aria-expanded="false">
+              <img class="mx-1" src="{% static "deps/icons/basket2-fill.svg" %}" alt="Catalog Icon" width="24"
+                height="24">
+              <span id="goods-in-cart-count">0</span>
+            </button>
           </div>
           <!-- Разметка модального окна корзины -->
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"

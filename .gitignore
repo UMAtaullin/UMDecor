@@ -1,6 +1,7 @@
 # python stuff
 .pylintrc
 __pycache__/
+/env
 
 # ide stuff
 .vscode/

@@ -1,10 +1,16 @@
 from django.shortcuts import render
 
+from goods.models import Category
+
 
 def index(request):
+
+    categories = Category.objects.all()
+
     data = {
         "title": "UMHome - Главная",
-        "content": "Магазин мебели"
+        "content": "Магазин мебели",
+        "categories": categories
     }
     return render(request, "main/index.html", data)
 
