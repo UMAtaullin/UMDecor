@@ -2,8 +2,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-SECRET_KEY = 'django-insecure-#7^52whna3k)*a&&a#oy8f9ez41ae8!owo6=$f&k$%&ryr1kdo'
+SECRET_KEY = "django-insecure-#7^52whna3k)*a&&a#oy8f9ez41ae8!owo6=$f&k$%&ryr1kdo"
 
 DEBUG = True
 
@@ -35,62 +34,64 @@ MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
-ROOT_URLCONF = 'config.urls'
+ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = "config.wsgi.application"
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
 
 
-LANGUAGE_CODE = 'ru-Ru'
+LANGUAGE_CODE = "ru-Ru"
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 
 USE_TZ = True
 
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_URL = "static/"
+STATICFILES_DIRS = [BASE_DIR / "static"]
+MEDIA_URL = "media/"
+MEDIA_ROOT = BASE_DIR / "media"
 
 INTERNAL_IPS = [
     # ...
@@ -98,4 +99,4 @@ INTERNAL_IPS = [
     # ...
 ]
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
