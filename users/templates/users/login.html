@@ -11,7 +11,16 @@
 
         <!-- Форма для авторизации -->
         <form action="{% url "user:login" %}" method="post">
+          {% csrf_token %}
+          {% for item in form %}
           <div class="mb-3">
+            <label for="{{ item.id_for_label }}" class="form-label">
+                {{ item.label }}
+            </label>
+              {{ item }}
+          </div>
+          {% endfor %}
+          {% comment %} <div class="mb-3">
             <label for="username" class="form-label">
                 Имя пользователя
             </label>
@@ -22,7 +31,7 @@
                 Пароль
             </label>
             <input type="password" class="form-control" id="password" placeholder="Введите ваш пароль" required>
-          </div>
+          </div>{% endcomment %}
           <button type="submit" class="btn btn-dark btn-block">
             Войти
           </button>
